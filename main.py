@@ -98,6 +98,24 @@ def plot_route(coords, route):
 # Global variable to store testing results
 testing_results = []
 
+def load_testing_results():
+    """Load existing testing results from CSV"""
+    try:
+        df = pd.read_csv("results.csv")
+        if df.empty:
+            return []
+        return df.to_dict('records')
+    except (FileNotFoundError, pd.errors.EmptyDataError):
+        return []
+
+def save_testing_results(results):
+    """Save testing results to CSV"""
+    df = pd.DataFrame(results)
+    df.to_csv("results.csv", index=False)
+
+# Load existing results on startup
+testing_results = load_testing_results()
+
 def run_genetic_algorithm(pop_size, generations, mutation_rate, 
                           selection_method, crossover_method, mutation_method,
                           progress=gr.Progress()):
@@ -171,6 +189,9 @@ def run_genetic_algorithm(pop_size, generations, mutation_rate,
         'Best Distance': f"{best_distance:.2f}"
     })
     
+    # Save to CSV file
+    save_testing_results(testing_results)
+    
     testing_df = pd.DataFrame(testing_results)
     
     return fig_conv, fig_route, results, history_df, testing_df
@@ -202,10 +223,16 @@ with gr.Blocks(title="GA TSP Solver") as demo:
         history_table = gr.Dataframe(headers=["Generation", "Best Distance"], interactive=False)
     
     gr.Markdown("### Testing")
+    
+    # Load initial testing data
+    initial_testing_data = pd.DataFrame(testing_results) if testing_results else pd.DataFrame(
+        columns=["Population Size", "Generations", "Mutation Rate", "Selection", "Crossover", "Mutation", "Best Distance"]
+    )
+    
     testing_table = gr.Dataframe(
         headers=["Population Size", "Generations", "Mutation Rate", "Selection", "Crossover", "Mutation", "Best Distance"],
         interactive=False,
-        value=pd.DataFrame(columns=["Population Size", "Generations", "Mutation Rate", "Selection", "Crossover", "Mutation", "Best Distance"])
+        value=initial_testing_data
     )
     
     run_btn.click(
@@ -215,4 +242,4 @@ with gr.Blocks(title="GA TSP Solver") as demo:
     )
 
 if __name__ == "__main__":
-    demo.launch() 
+    demo.launch()

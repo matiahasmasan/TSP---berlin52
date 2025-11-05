@@ -1,0 +1,5 @@
+Population Size,Generations,Mutation Rate,Selection,Crossover,Mutation,Best Distance
+50,300,0.2,Tournament,Two-Point,Bit-Flip,9161.6
+90,300,0.2,Tournament,Two-Point,Bit-Flip,9290.13
+90,300,0.2,Roulette,One-Point,Swap,25012.55
+130,600,0.5,Roulette,Two-Point,Bit-Flip,25573.94
