@@ -1,5 +1,22 @@
 Population Size,Generations,Mutation Rate,Selection,Crossover,Mutation,Best Distance
-50,300,0.2,Tournament,Two-Point,Bit-Flip,9161.6
-90,300,0.2,Tournament,Two-Point,Bit-Flip,9290.13
-90,300,0.2,Roulette,One-Point,Swap,25012.55
-130,600,0.5,Roulette,Two-Point,Bit-Flip,25573.94
+10,200,0.2,Tournament,One-Point,Swap,16727.00
+60,200,0.2,Tournament,One-Point,Swap,12833.65
+120,200,0.2,Tournament,One-Point,Swap,11118.11
+200,200,0.2,Tournament,One-Point,Swap,9399.15
+100,200,0.2,Tournament,One-Point,Swap,11034.79
+100,300,0.2,Tournament,One-Point,Swap,10548.70
+100,400,0.2,Tournament,One-Point,Swap,10385.32
+100,500,0.2,Tournament,One-Point,Swap,10836.81
+100,800,0.2,Tournament,One-Point,Swap,10147.00
+100,1000,0.2,Tournament,One-Point,Swap,10542.05
+100,200,0.3,Tournament,One-Point,Swap,10418.05
+100,200,0.4,Tournament,One-Point,Swap,11974.29
+100,200,0.5,Tournament,One-Point,Swap,11432.19
+100,200,0.75,Tournament,One-Point,Swap,15504.56
+100,200,1.0,Tournament,One-Point,Swap,16978.74
+100,200,0.2,Roulette,One-Point,Swap,23733.78
+100,200,0.2,Roulette,Two-Point,Swap,26854.20
+100,200,0.2,Roulette,Two-Point,Bit-Flip,24348.36
+100,200,0.2,Roulette,One-Point,Bit-Flip,26182.81
+100,200,0.2,Tournament,One-Point,Bit-Flip,9067.34
+150,600,0.2,Tournament,Two-Point,Bit-Flip,8128.83
