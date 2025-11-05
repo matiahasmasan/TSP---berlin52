@@ -11,4 +11,4 @@ Can also change variables (pop_size, generation, mutation rate) thanks to a slid
 How to run?
 pip install numpy pandas gradio matplotlib 
 
-Than run the main.py file
+Then run the main.py file
